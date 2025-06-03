@@ -30,109 +30,82 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card
-            className="hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => setUserType("owner")}
-          >
-            <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                <Icon name="Settings" size={32} className="text-purple-600" />
-              </div>
-              <CardTitle className="text-2xl">Собственник</CardTitle>
-              <CardDescription>
-                Управляйте парком электротранспорта и получайте доход от аренды
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Добавление устройств
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Трекинг в реальном времени
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Автоматический сбор платежей
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Удаленная блокировка
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+        {userType === null && (
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => setUserType("owner")}
+            >
+              <CardHeader className="text-center">
+                <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                  <Icon name="Settings" size={32} className="text-purple-600" />
+                </div>
+                <CardTitle className="text-2xl">Собственник</CardTitle>
+                <CardDescription>
+                  Управляйте парком электротранспорта и получайте доход от
+                  аренды
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Добавление устройств</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Трекинг в реальном времени</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">
+                      Автоматический сбор платежей
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Удаленная блокировка</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-          <Card
-            className="hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => setUserType("renter")}
-          >
-            <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                <Icon name="User" size={32} className="text-indigo-600" />
-              </div>
-              <CardTitle className="text-2xl">Арендатор</CardTitle>
-              <CardDescription>
-                Арендуйте электротранспорт быстро и удобно
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Быстрая регистрация
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Автоматическая оплата
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Чат с собственниками
-                </li>
-                <li className="flex items-center">
-                  <Icon
-                    name="Check"
-                    size={16}
-                    className="text-green-500 mr-2"
-                  />
-                  Безопасная аренда
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
+            <Card
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => setUserType("renter")}
+            >
+              <CardHeader className="text-center">
+                <div className="mx-auto w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                  <Icon name="User" size={32} className="text-indigo-600" />
+                </div>
+                <CardTitle className="text-2xl">Арендатор</CardTitle>
+                <CardDescription>
+                  Арендуйте электротранспорт быстро и удобно
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Быстрая регистрация</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Автоматическая оплата</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Чат с собственниками</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm">Безопасная аренда</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        )}
 
         <div className="text-center mt-12">
           <Button
